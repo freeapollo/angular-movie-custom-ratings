@@ -1,0 +1,25 @@
+<div class="row filters">
+  <div class="col-sm-3">
+    <div>Sort by:</div>
+    <select class="form-control"
+            ng-model="$ctrl.sortBy">
+      <option value="title">Title</option>
+      <option value="releaseDate">Release Date</option>
+    </select>
+  </div>
+  <div class="col-sm-3">
+    <div>Sort Direction:</div>
+    <select class="form-control"
+            ng-model="$ctrl.sortDirection">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+  </div>
+</div>
+<div class="row">
+  <movie-item ng-repeat="movie in $ctrl.movies | orderBy:$ctrl.sortBy:$ctrl.sortDirection === 'desc' track by movie.id"
+              on-update="$ctrl.handleMovieUpdate(movie)"
+              movie="movie"
+              class="col-sm-4">
+  </movie-item>
+</div>

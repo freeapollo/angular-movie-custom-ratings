@@ -1,0 +1,9 @@
+<ul ng-class="{readonly: $ctrl.readonly}"
+    class="star-rating">
+  <li ng-repeat="star in $ctrl.stars track by $index"
+      ng-class="{filled: star.filled}"
+      ng-click="$ctrl.handleStarClick($index)"
+      class="star">
+    <i class="fa fa-star"></i>
+  </li>
+</ul>

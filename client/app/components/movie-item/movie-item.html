@@ -1,0 +1,14 @@
+<div class="movie">
+  <img ng-src="{{ $ctrl.movie.image }}"
+       class="movie-image"
+       alt="{{ $ctrl.movie.title }}"
+       width="140"
+       height="209" />
+  <h3 class="movie-title">{{ $ctrl.movie.title }}</h3>
+  <div class="movie-release-date">{{ $ctrl.movie.releaseDate | date:$ctrl.releaseDateFormat }}</div>
+  <div class="movie-rating-text">{{ $ctrl.movie.ratingText }}</div>
+  <star-rating rating-value="$ctrl.movie.rating"
+               readonly="!$ctrl.movie.isReleased"
+               on-select="$ctrl.updateRating(rating)">
+  </star-rating>
+</div>

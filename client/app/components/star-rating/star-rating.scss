@@ -1,0 +1,26 @@
+.star-rating {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+
+  .star {
+    cursor: pointer;
+    color: #ddd;
+    display: inline-block;
+    font-size: 18px;
+    padding: 1px;
+    text-shadow: 0.05em 0.05em #aaa;
+    list-style-type: none;
+    transition: all 300ms;
+
+    &.filled {
+      color: rgb(38, 95, 148);
+    }
+  }
+
+  &.readonly {
+    .star {
+      cursor: default;
+    }
+  }
+}
